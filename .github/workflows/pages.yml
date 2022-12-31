@@ -23,10 +23,12 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public # 最后构建结果会发布到gh-pages分支
+      - name: Build && Deploy
+        run: npm run deploy # 不使用下面的action库，使用hexo的hexo-deployer-git依赖实现构建并push到指定仓库的指定分支。
+      # - name: Build
+      #   run: npm run build
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public # 最后构建结果会发布到gh-pages分支

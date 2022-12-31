@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://code-taiyang.github.io/hexo-blog # 博客发布的url
-root: /hexo-blog/
+url: https://code-taiyang.github.io/ # 博客发布的url
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -104,4 +104,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 ## 如果你不打算用github pages发布，那么下面的配置需要填type/repo等字段，让打包指令将结果发布到指定的git仓库指定的分支。（这里需要安装hexo-deployer-git依赖）
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:code-taiyang/code-taiyang.github.io.git # 发布到code-taiyang.github.io仓库的master-hexo分支 同时在code-taiyang.github.io仓库设置好github pages自动发布master-hexo分支
+  branch: master-hexo
