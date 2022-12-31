@@ -23,6 +23,10 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Set GitUser # action应该不是用git clone下载项目的，所以如果要将构建结果发布到指定仓库就先设置git信息
+        run: |
+          git config --global user.email "15586252890@163.com"
+          git config --global user.name "code-taiyang"
       - name: Build && Deploy
         run: npm run deploy # 不使用下面的action库，使用hexo的hexo-deployer-git依赖实现构建并push到指定仓库的指定分支。
       # - name: Build
