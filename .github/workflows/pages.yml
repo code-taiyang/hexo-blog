@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - develop # 监听develop的push，让github action构建打包
+      - dev-github # 监听develop的push，让github action构建打包
 
 jobs:
   pages:
