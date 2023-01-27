@@ -107,3 +107,28 @@ deploy:
   type: git
   repo: git@staiyang.top:code-taiyang/hexo-deploy.git
   branch: deploy
+
+
+# 打包压缩配置hexo-neat [这里没有图片、字体等静态资源的压缩]
+# https://github.com/rozbo/hexo-neat
+neat_enable: true
+
+neat_html: 
+  enable: true
+  logger:
+  # 注意
+  exclude:
+
+neat_css:
+  enable: true
+  logger: 
+  exclude:
+    - '**/*.min.css' # 注意路径配置。这里滤掉所有的.min.css
+neat_js:
+  enable: true
+  logger: 
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
